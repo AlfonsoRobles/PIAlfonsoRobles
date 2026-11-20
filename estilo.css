@@ -1,0 +1,475 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    min-height:100%;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    color:#333;
+    background:url("mar.jpg") center center / cover no-repeat;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    padding:1rem;
+    flex-wrap:wrap;
+    background:#e0f7fa;
+}
+
+.logo img{
+    width:160px;
+    height:auto;
+}
+
+input[type="text"]{
+    width:100%;
+    max-width:700px;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:25px;
+}
+
+.cart{
+    font-size:2rem;
+}
+
+/* =========================
+   NAV
+========================= */
+
+nav{
+    position:relative;
+    z-index:9999;
+}
+
+.menu-toggle{
+    display:none;
+    width:100%;
+    padding:15px;
+    border:none;
+    cursor:pointer;
+    font-size:1.2rem;
+    background:#006064;
+    color:#fff;
+    text-align:left;
+}
+
+ul.topnav{
+    list-style:none;
+    background:#c4dfe4;
+
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+
+    overflow:visible; /* IMPORTANTE */
+}
+
+ul.topnav li{
+    position:relative;
+}
+
+ul.topnav li a{
+    display:block;
+    text-decoration:none;
+    color:#263134;
+    padding:20px;
+}
+
+ul.topnav li a:hover{
+    background:#8fd0df;
+}
+
+ul.topnav li a.active{
+    background:#97d5e4;
+}
+
+/* =========================
+   SUBMENU
+========================= */
+
+.dropdown{
+    position:relative;
+}
+
+.submenu{
+    display:none;
+    position:absolute;
+
+    top:100%;
+    left:0;
+
+    min-width:230px;
+
+    background:#87c6d4;
+
+    list-style:none;
+    padding:0;
+    margin:0;
+
+    z-index:10000;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.25);
+}
+
+.submenu li{
+    width:100%;
+}
+
+.submenu li a{
+    display:block;
+    padding:14px;
+    color:#fff;
+    background:#acdfeb;
+}
+
+.submenu li a:hover{
+    background:#65b7ca;
+}
+
+.dropdown:hover > .submenu{
+    display:block;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    text-align:center;
+    padding:3rem 1rem;
+    background:#a8daf3;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    margin-bottom:15px;
+}
+
+.hero button{
+    padding:12px 24px;
+    border:none;
+    cursor:pointer;
+    background:#00796b;
+    color:white;
+    font-size:1rem;
+}
+
+/* =========================
+   SECCIONES
+========================= */
+
+.categorias,
+.productos{
+    padding:2rem;
+}
+
+.categorias{
+    background:rgba(0,0,0,.25);
+    color:white;
+    text-align:center;
+}
+
+.categorias h2{
+    margin-bottom:20px;
+}
+
+/* =========================
+   CARRUSEL
+========================= */
+
+.carousel{
+    position:relative;
+    overflow:hidden;
+}
+
+.carousel-track{
+    display:flex;
+    gap:20px;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    scrollbar-width:none;
+}
+
+.carousel-track::-webkit-scrollbar{
+    display:none;
+}
+
+.category{
+    flex:0 0 200px;
+    background:rgba(20, 19, 19, 0.95);
+    border-radius:8px;
+    padding:10px;
+}
+
+.category img{
+    width:80%;
+    height:100px;
+    object-fit:cover;
+    border-radius:6px;
+}
+
+.arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:10;
+
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+
+    background:rgba(0,0,0,.5);
+    color:white;
+
+    font-size:2rem;
+    padding:5px 10px;
+}
+
+.arrow.left{
+    left:10px;
+}
+
+.arrow.right{
+    right:10px;
+}
+
+/* =========================
+   PRODUCTOS
+========================= */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+
+.producto{
+    background:rgba(255,255,255,.9);
+    padding:15px;
+    border-radius:8px;
+    text-align:center;
+}
+
+.producto img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:6px;
+    transition:transform .3s;
+}
+
+.producto img:hover{
+    transform:scale(1.05);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+
+    padding:20px;
+
+    background:#90d7fa;
+}
+
+footer a{
+    color:#fff;
+    text-decoration:none;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .topnav{
+        display:none !important;
+        flex-direction:column;
+        width:100%;
+    }
+
+    .topnav.active{
+        display:flex !important;
+    }
+
+    .topnav li{
+        width:100%;
+    }
+
+    .topnav li a{
+        text-align:center;
+    }
+
+    .submenu{
+        position:static;
+        display:none;
+        width:100%;
+        box-shadow:none;
+    }
+
+    .submenu.active{
+        display:block;
+    }
+
+    .dropdown:hover .submenu{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:2rem;
+    }
+
+    .grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+/* =========================
+   MOVIL
+========================= */
+
+@media(max-width:480px){
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .logo img{
+        width:120px;
+    }
+
+    .hero h1{
+        font-size:1.7rem;
+    }
+
+    .producto img{
+        height:160px;
+    }
+
+    .category{
+        flex:0 0 150px;
+    }
+}
+/* =========================
+   BOTÓN VOLVER ARRIBA
+========================= */
+
+#btnTop{
+    display:none;
+
+    position:fixed;
+    bottom:20px;
+    right:20px;
+
+    width:50px;
+    height:50px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#006064;
+    color:white;
+
+    font-size:24px;
+    cursor:pointer;
+
+    z-index:9999;
+
+    box-shadow:0 4px 10px rgba(0,0,0,.3);
+
+    transition:all .3s ease;
+}
+
+#btnTop:hover{
+    background:#00838f;
+    transform:scale(1.1);
+}
+
+.redes{
+    display:flex;
+    gap:20px;
+    align-items:center;
+}
+
+.redes a{
+    color:white;
+    font-size:18px;
+    transition:.3s;
+}
+
+.redes a:hover{
+    transform:scale(1.2);
+}
+
+/* =========================
+   Iconos Redes
+========================= */
+/* Colores oficiales */
+
+.fa-facebook:hover{
+    color:#1877f2;
+}
+
+.fa-instagram:hover{
+    color:#e4405f;
+}
+
+.fa-whatsapp:hover{
+    color:#25d366;
+}
+
+.fa-youtube:hover{
+    color:#ff0000;
+}
+
+.fa-tiktok:hover{
+    color:#000;
+}
+
+.cart{
+    font-size:2rem;
+    text-decoration:none;
+    cursor:pointer;
+    color:#333;
+}
+
+.cart:hover{
+    transform:scale(1.1);
+}
